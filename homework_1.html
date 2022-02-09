@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+
+    <style>
+.main-sell {
+    width: 600px;
+    margin: 30px auto 0px auto;
+    }
+.product {
+    height: 400px;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+}
+.title {
+    display: inline;
+}
+.title-price {
+        margin-left: 10px;
+}
+.description {
+display: block;
+}
+.order-btn {
+    display: block;
+    align-items: center;
+}
+
+    </style>
+
+</head>
+
+<body>
+    <div class="main-sell">
+        <img class="product" src="http://m.boheme.co.kr/web/product/big/201610/7193_shop1_249457.jpg">
+        <h1 class="title">만년필 판매</h1><span class="title title-price">가격: 980,000원/개</span>
+        <span class="description">1906년 '루즈 & 느와' 만년필이 처음 출시된 직후 닙을 잉크병에 넣어 잉크를 충전하지 않아도 되는 간단한 작동 방식을 선보이며 놀라운 기술적 성과로 높은 명성을 얻었습니다.
+                        헤리티지 컬렉션 루즈 & 느와는 110년 동안 계승되어 온 선각자적 정신을 기념합니다. </span>
+
+        <div class="order">
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">주문자 이름</div>
+                </div>
+                <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="">
+            </div>
+
+            <div class="select-form mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">수량</div>
+                    <select class="form-control">
+                        <option selected>-- 수량을 선택하세요 --</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">주소</div>
+                </div>
+                <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="">
+            </div>
+
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">전화번호</div>
+                </div>
+                <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="">
+            </div>
+        </div>
+        <div class="order-btn">
+        <button type="button" class="btn btn-primary">주문하기</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
