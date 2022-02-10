@@ -44,10 +44,16 @@ display: block;
 }
 .order-btn {
     display: block;
-    align-items: center;
+    text-align: center;
 }
 
     </style>
+
+    <script>
+        function hey() {
+            alert('주문이 완료되었습니다.')
+        }
+    </script>
 
 </head>
 
@@ -93,9 +99,10 @@ display: block;
             </div>
         </div>
         <div class="order-btn">
-        <button type="button" class="btn btn-primary">주문하기</button>
+        <button onclick="hey()" type="button" class="btn btn-primary">주문하기</button>
         </div>
     </div>
+
 
 </body>
 
