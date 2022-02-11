@@ -44,34 +44,15 @@ display: block;
 }
 .order-btn {
     display: block;
-    align-items: center;
-}
-#rate {
-    color: mediumblue;
-    font-weight: bold;
-    padding: 10px 0px;
+    text-align: center;
 }
 
     </style>
 
     <script>
-        $(document).ready(function () {
-            a1();
-        });
-
-        function a1() {
-            $.ajax({
-                type: "GET",
-                url: "https://api.manana.kr/exchange/rate.json",
-                data: {},
-                success: function (response) {
-                    let exrate = response[1]['rate'];
-                    $('#ex-rate').text(exrate)
-
-                }
-            })
+        function hey() {
+            alert('주문이 완료되었습니다.')
         }
-
     </script>
 
 </head>
@@ -82,9 +63,6 @@ display: block;
         <h1 class="title">만년필 판매</h1><span class="title title-price">가격: 980,000원/개</span>
         <span class="description">1906년 '루즈 & 느와' 만년필이 처음 출시된 직후 닙을 잉크병에 넣어 잉크를 충전하지 않아도 되는 간단한 작동 방식을 선보이며 놀라운 기술적 성과로 높은 명성을 얻었습니다.
                         헤리티지 컬렉션 루즈 & 느와는 110년 동안 계승되어 온 선각자적 정신을 기념합니다. </span>
-
-        <p id="rate">달러-원 환율 : <span id="ex-rate">1194.3</span>
-        </p>
 
         <div class="order">
             <div class="input-group mb-2 mr-sm-2">
@@ -121,9 +99,10 @@ display: block;
             </div>
         </div>
         <div class="order-btn">
-        <button type="button" class="btn btn-primary">주문하기</button>
+        <button onclick="hey()" type="button" class="btn btn-primary">주문하기</button>
         </div>
     </div>
+
 
 </body>
 
