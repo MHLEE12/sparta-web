@@ -50,8 +50,57 @@
             padding: 30px;
             margin: 0px auto 20px auto;
             border-radius: 10px;
+            display: none;
         }
     </style>
+
+    <script>
+        $(document).ready(function () {
+            $('#card-box').empty();
+            listing();
+        });
+
+        function listing() {
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/post",
+                data: {},
+                success: function (response) {
+                    let rows = response['articles']
+                    for (let i = 0; i < rows.length; i++) {
+                        let comment = rows[i]['comment']
+                        let desc = rows[i]['desc']
+                        let image = rows[i]['image']
+                        let title = rows[i]['title']
+                        let url = rows[i]['url']
+
+                        let temp_html = `<div class="card">
+            <img class="card-img-top"
+                 src="${image}"
+                 alt="Card image cap">
+            <div class="card-body">
+                <a href="${url}"><h5 class="card-title">${title}</h5></a>
+                <p class="card-text">${desc}</p>
+                <p class="card-comment">${comment}</p>
+            </div>
+        </div>`
+                        $('#card-box').append(temp_html)
+                    }
+                }
+            })
+        }
+
+        function openclose() {
+            let status = $('#post-box').css('display');
+            if (status == 'block') {
+                $('#post-box').hide();
+                $('#btn-posting-box').text('포스팅박스 열기');
+            } else {
+                $('#post-box').show();
+                $('#btn-posting-box').text('포스팅박스 닫기');
+            }
+        }
+    </script>
 
 </head>
 
@@ -62,13 +111,13 @@
         <p class="lead">중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다</p>
         <hr class="my-4">
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">포스팅박스 열기</a>
+            <a onclick="openclose()" id="btn-posting-box" class="btn btn-primary btn-lg" href="#" role="button">포스팅박스 열기</a>
         </p>
     </div>
-    <div class="form-post">
+    <div class="form-post" id="post-box">
         <div class="form-group">
             <p>아티클 URL</p>
-            <input type="url" class="form-control" >
+            <input type="url" class="form-control" id="article-url" >
         </div>
         <div class="form-group">
             <div class="form-group">
@@ -78,7 +127,7 @@
         </div>
         <button type="submit" class="btn btn-primary">기사저장</button>
     </div>
-    <div class="card-columns">
+    <div class="card-columns" id="card-box">
         <div class="card">
             <img class="card-img-top"
                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/2011%EB%85%84_11%EC%9B%94_%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD_%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EB%AA%85%EC%86%8C_%28Seoul_best_attractions%29_%EA%B4%91%ED%99%94%EB%AC%B8.JPG/305px-2011%EB%85%84_11%EC%9B%94_%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD_%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EB%AA%85%EC%86%8C_%28Seoul_best_attractions%29_%EA%B4%91%ED%99%94%EB%AC%B8.JPG"
